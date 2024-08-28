@@ -51,3 +51,53 @@ fadeEls.forEach((fade, index) => {
     opacity: 1,
   })
 })
+
+// new Swiper(선택자, 옵션) : 선택자는 적용할 요소
+
+// Swiper Vertical Slides
+new Swiper('.notice-line .swiper', {
+  direction: 'vertical',
+  autoplay: true,
+  loop: true,
+})
+
+// Swiper horizontal Slides
+new Swiper('.promotion .swiper', {
+  // 한 번에 보여줄 슬라이드 개수
+  slidesPerView: 3,
+  // 슬라이드 사이 여백 (픽셀)
+  spaceBetween: 10,
+  // 1번 슬라이드가 가운데 보이도록
+  centeredSlides: true,
+  // 5초마다 다음 슬라이드로
+  autoplay: {
+    delay: 5000,
+  },
+  loop: true,
+  pagination: {
+    // 페이지 번호 요소 선택자
+    el: '.promotion .swiper-pagination',
+    // 클릭하여 제어가 가능하도록
+    clickable: true,
+  },
+  navigation: {
+    prevEl: '.promotion .swiper-prev',
+    nextEl: '.promotion .swiper-next',
+  },
+})
+
+const promotionEl = document.querySelector('.promotion')
+const promotionToggleBtn = document.querySelector('.toggle-promotion')
+let isHidePromotion = false
+
+// 버튼을 누르면 프로모션 부분이 보이게
+promotionToggleBtn.addEventListener('click', () => {
+  isHidePromotion = !isHidePromotion
+  if (isHidePromotion) {
+    // 숨김
+    promotionEl.classList.add('hide')
+  } else {
+    // 보임
+    promotionEl.classList.remove('hide')
+  }
+})

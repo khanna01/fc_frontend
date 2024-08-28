@@ -39,3 +39,28 @@ gsap.to(요소, 지속시간, 옵션)
 ```
 
 <hr>
+
+자주 쓰이는 요소를 수평으로 가운데 정렬하는 방법
+
+	1.	left: 50%; - 요소의 왼쪽 끝을 부모 요소의 왼쪽에서 50% 위치에 배치. 요소의 왼쪽 끝이 부모 요소의 중앙에 옴
+	2.	margin-left: -요소의 너비의 절반; - 요소의 너비의 절반만큼 왼쪽으로 이동시켜, 요소 자체의 중앙이 부모 요소의 중앙에 위치
+예)
+```css
+.element {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px; /* 요소의 너비의 절반만큼 */
+}
+```
+
+위 방법은 요소의 너비가 고정되어 있을 때 유효. 요소의 너비가 동적으로 변하는 경우에는 transform: translateX(-50%);를 사용할 것. 요소의 너비에 상관없이 가운데 정렬이 가능함.
+
+예)
+```css
+.element {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+```
