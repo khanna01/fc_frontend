@@ -41,3 +41,13 @@ window.addEventListener(
     }
   }, 300),
 )
+
+const fadeEls = document.querySelectorAll('.visual .fade-in')
+// 순차적으로 애니메이션 적용하면서 나타나게
+fadeEls.forEach((fade, index) => {
+  gsap.to(fade, 1, {
+    // 처음 요소 : 0.7초 후 적용, 두 번째 요소 : 1.4초 후 적용, ...
+    delay: (index + 1) * 0.7,
+    opacity: 1,
+  })
+})
