@@ -527,3 +527,49 @@ header .badges .badge {
   background-color: #333;
   color: #fff;
 }
+
+/*REWARDS*/
+.rewards {
+  position: relative;
+}
+
+.rewards .bg-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #272727;
+}
+
+.rewards .bg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #d5c798;
+}
+
+.rewards .container {
+  background-image: url('../images/rewards.jpg');
+  height: 241px;
+}
+
+.rewards .btn-group {
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+  gap: 10px;
+}
+
+.rewards .btn-group .btn.sign-in {
+  width: 110px;
+}
+
+.rewards .btn-group .btn.gift {
+  flex-grow: 1;
+}
