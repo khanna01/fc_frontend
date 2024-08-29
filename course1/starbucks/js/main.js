@@ -125,3 +125,16 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15)
 floatingObject('.floating2', 0.5, 15)
 floatingObject('.floating3', 1.5, 20)
+
+const spyEls = document.querySelectorAll('section')
+spyEls.forEach((el) => {
+  new ScrollMagic.Scene({
+    // 보여짐 여부를 감시할 요소
+    triggerElement: el,
+    // 뷰포트 어느 지점에서 요소가 나타나면 트리거 될 것인지 설정
+    // 해당 지점에서 요소가 나타나면 setClassToggle 함수 실행
+    triggerHook: 0.8,
+  })
+    .setClassToggle(el, 'show')
+    .addTo(new ScrollMagic.Controller())
+})
