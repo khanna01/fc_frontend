@@ -19,6 +19,7 @@ searchInputEl.addEventListener('blur', () => {
 })
 
 const badgeEl = document.querySelector('header .badges')
+const toTopEl = document.querySelector('#to-top')
 
 // 스크롤시 배지 나타나게/사라지게
 window.addEventListener(
@@ -31,6 +32,11 @@ window.addEventListener(
         opacity: 0,
         display: 'none',
       })
+
+      // 상단 이동 버튼 보이기
+      gsap.to(toTopEl, 0.2, {
+        x: 0,
+      })
     } else {
       // 배지 보이기
       // badgeEl.style.display = 'block'
@@ -38,9 +44,21 @@ window.addEventListener(
         opacity: 1,
         display: 'block',
       })
+
+      // 상단 이동 버튼 숨기기
+      gsap.to(toTopEl, 0.2, {
+        x: 100,
+      })
     }
   }, 300),
 )
+
+// 상단 이동 버튼을 누르면 화면 맨 위로 이동하도록
+toTopEl.addEventListener('click', (e) => {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  })
+})
 
 const fadeEls = document.querySelectorAll('.visual .fade-in')
 // 순차적으로 애니메이션 적용하면서 나타나게
