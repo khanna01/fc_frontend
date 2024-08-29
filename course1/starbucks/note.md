@@ -3,7 +3,11 @@
 
 인라인 요소 -> 글자 취급 요소. 글자가 baseline을 기준으로 놓이기 때문에 baseline 아래 하단 부분이 있음
 
-img 태그도 인라인 요소이기 때문에 하단 부분 여백이 생김 -> display: block; 으로 설정하여 해결
+img 태그도 인라인 요소이기 때문에 하단 부분 여백이 생김 
+해결 방법
+1. display: block; 으로 설정하여 해결. 단, 이미지 옆에 다른 요소가 올 수 없음.
+2. vertical-align: bottom; baseline 아래 하단 부분으로 정렬하여 여백이 보이지 않음
+3. image를 감싸는 부모요소에 font-size: 0; 설정
 
 <hr>
 
