@@ -86,6 +86,20 @@ new Swiper('.promotion .swiper', {
   },
 })
 
+new Swiper('.awards .swiper', {
+  slidesPerView: 5,
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 4000,
+  },
+  loop: true,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next',
+  },
+})
+
 const promotionEl = document.querySelector('.promotion')
 const promotionToggleBtn = document.querySelector('.toggle-promotion')
 let isHidePromotion = false
