@@ -1,7 +1,8 @@
 # [패스트 캠퍼스] 프론트엔드 웹 개발의 모든 것 초격차 패키지
 
 ## Course 1
-Part 1. HTML/CSS/JS로 만드는 스타벅스 웹사이트
+Part 1. HTML/CSS/JS로 만드는 스타벅스 웹사이트  
+[링크](https://main--beamish-quokka-1d2154.netlify.app/)
 
 Part 2. Git을 활용한 버전관리
 
