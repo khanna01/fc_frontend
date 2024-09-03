@@ -31,3 +31,22 @@ transition 적용 대상에 display는 없음 -> 요소가 나타나고 사라�
 HTML 
 html요소: document.documentElement
 body요소: document.body
+
+<hr>
+
+position: sticky;
+부모 요소 안에서만 동작
+
+<hr>
+
+블러처리
+- 해당 요소를 블러 처리: filter: blur();
+- 요소 배경을 블러 처리: backdrop-filter: blur();
+
+<hr>
+
+요소 박스에 그림자 적용
+box-shadow: x축 | y축 | blur | spread | 색
+
+<hr>
+
