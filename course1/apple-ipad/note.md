@@ -50,3 +50,22 @@ box-shadow: x축 | y축 | blur | spread | 색
 
 <hr>
 
+사이트에서 가장 먼저 보이는 영역을 hero 콘텐츠라고 함  
+
+<hr>
+
+글자 드래그하여 선택하는 거 방지 : user-select: none;
+이미지 드래그 선택 방지도 가능 -> 이미지는 글자로 취급되기 때문  
+이미지 드래그 방지(드래그하면 이미지 자체가 선택되어 마우스를 따라 움직임) : -webkit-user-drag: none; (일부 브라우저에서만)
+
+<hr>
+
+**CSS Vendor Prefixes (공급업체 접두사)**  
+-webkit- (Chrome, Safari, iOS Safari / iOS WebView, Android, Edge)   
+-moz- (Firefox)  
+-ms- (Edge, Internet Explorer)  
+-o- (Opera, Opera Mini)  
+
+<hr>
+
+z-index는 position이 static이 아니거나 position이 있어야 적용됨. 
