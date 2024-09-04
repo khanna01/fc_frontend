@@ -69,3 +69,22 @@ box-shadow: x축 | y축 | blur | spread | 색
 <hr>
 
 z-index는 position이 static이 아니거나 position이 있어야 적용됨. 
+
+<hr>
+
+**CSS 변수**  
+--변수명: 값;
+
+사용 예시)
+```css
+.container {
+  --red: red;
+  --w: 100px;
+  background-color: var(--red);
+  width: var(--w);
+}
+```
+CSS 변수 유효 범위 : 선언된 요소와 후손 요소
+
+<hr>
+
