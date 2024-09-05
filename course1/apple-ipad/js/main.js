@@ -89,3 +89,22 @@ const infoEls = document.querySelectorAll('.info')
 infoEls.forEach((infoEl) => {
   io.observe(infoEl)
 })
+
+// 비디오 재생
+const video = document.querySelector('.stage video')
+const playBtn = document.querySelector('.stage .controller--play')
+const pauseBtn = document.querySelector('.stage .controller--pause')
+
+playBtn.addEventListener('click', (e) => {
+  // 비디오 재생
+  video.play()
+  playBtn.classList.add('hide')
+  pauseBtn.classList.remove('hide')
+})
+
+pauseBtn.addEventListener('click', (e) => {
+  // 비디오 멈춤
+  video.pause()
+  playBtn.classList.remove('hide')
+  pauseBtn.classList.add('hide')
+})
