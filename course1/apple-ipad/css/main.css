@@ -1094,7 +1094,28 @@ nav ul.menu li.active:hover a {
   transform: translate(533px, 485px);
 }
 
-.privacy @keyframes sprite-icon {
+/* ACCESSIBILITY */
+.accessibility {
+  margin-top: 266px;
+  margin-bottom: 170px;
+}
+
+.accessibility h1 {
+  width: 384px;
+  height: 270px;
+  background-image: url('../images/accessibility_headline.png');
+}
+
+.accessibility .infos {
+  margin-top: 20px;
+}
+
+.accessibility figure {
+  transform: translate(470px, -620px);
+}
+
+/* Icon Animation */
+@keyframes sprite-icon {
   /* 1~10 */
   0.00% {
     background-position: 0 0;
