@@ -96,3 +96,17 @@ margin을 이용한 가로 정렬
 
 <hr>
 
+내부 그림자 생성하려면 box-shadow에 inset 키워드 사용.  
+예) box-shadow: inset 1px 1px 3px rbga(0, 0, 0, .1);
+
+<hr>
+
+천 단위 컴마 숫자 표시 방법  
+toLocaleString() 함수 이용 - 매개변수로 'en-US', 'ko-KR' 등으로 작성
+```javascript
+  const price = 999000;
+  console.log(price.toLocaleString('ko-KR')) 
+  // '999,000'
+```
+
+<hr>
