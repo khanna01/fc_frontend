@@ -6,7 +6,8 @@ Part 1. HTML/CSS/JS로 만드는 스타벅스 웹사이트
 
 Part 2. Git을 활용한 버전관리
 
-Part 3. 애플 아이패드 반응형 웹사이트
+Part 3. 애플 아이패드 반응형 웹사이트  
+[링크](https://ipad-lyart-kappa.vercel.app/)
 
 Part 4. JavaScript 마스터
 
