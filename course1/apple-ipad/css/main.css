@@ -584,6 +584,11 @@ nav ul.menu li.active:hover a {
   color: var(--color-font);
 }
 
+/* MAIN */
+main {
+  overflow-x: hidden;
+}
+
 /* HERO */
 .hero {
   background-color: var(--color-section);
@@ -1375,6 +1380,93 @@ footer .breadcrumbs a::after {
 
 footer .breadcrumbs a:last-child::after {
   display: none;
+}
+
+/* Footer / Navigations */
+footer .navigations {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  height: 344px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+footer .navigations .map {
+  margin-top: 24px;
+}
+
+footer .navigations .map:nth-child(6) {
+  margin-bottom: 100px;
+}
+
+footer .navigations .map h3 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+footer .navigations .map li {
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+footer .navigations .map li a {
+  color: var(--color-font-darkgray);
+}
+
+footer .navigations .map li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer / How to Shop, legal, locale */
+footer .how-to-shop {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--color-font-darkgray);
+}
+footer .how-to-shop a {
+  color: var(--color-link);
+}
+footer .how-to-shop a:hover {
+  text-decoration: underline;
+}
+
+footer .legal {
+  margin-top: 10px;
+  padding: 10px 0 40px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  gap: 50px;
+  font-size: 12px;
+  color: var(--color-font-darkgray);
+}
+
+footer .legal ul {
+  display: flex;
+  gap: 21px;
+  flex-grow: 1;
+}
+
+footer .legal ul li {
+  position: relative;
+}
+
+footer .legal ul li::after {
+  content: '|';
+  position: absolute;
+  right: -11px;
+  color: var(--color-border);
+}
+
+footer .legal ul li:last-child::after {
+  display: none;
+}
+
+footer .legal ul li:hover a {
+  text-decoration: underline;
+}
+
+footer .locale {
 }
 
 /* Icon Animation */
