@@ -44,15 +44,17 @@ const searchDelayEls = [...searchWrapEl.querySelectorAll('li')]
 
 searchStarterEl.addEventListener('click', showSearch)
 
-searchCloserEl.addEventListener('click', hideSearch)
+searchCloserEl.addEventListener('click', (e) => {
+  e.stopPropagation()
+  hideSearch()
+})
 
 searchShadowEl.addEventListener('click', hideSearch)
 
 // 검색창 보이기
 function showSearch() {
   headerEl.classList.add('searching')
-  // html 요소
-  document.documentElement.classList.add('fixed')
+  stopScroll()
   headerMenuEls.reverse().forEach((element, index) => {
     element.style.transitionDelay = (index * 0.4) / headerMenuEls.length + 's'
   })
@@ -67,7 +69,7 @@ function showSearch() {
 // 검색창 숨기기
 function hideSearch() {
   headerEl.classList.remove('searching')
-  document.documentElement.classList.remove('fixed')
+  playScroll()
   headerMenuEls.reverse().forEach((element, index) => {
     element.style.transitionDelay = (index * 0.4) / headerMenuEls.length + 's'
   })
@@ -77,6 +79,49 @@ function hideSearch() {
   searchDelayEls.reverse()
   searchInputEl.value = ''
 }
+
+function playScroll() {
+  document.documentElement.classList.remove('fixed')
+}
+
+function stopScroll() {
+  document.documentElement.classList.add('fixed')
+}
+
+// 헤더 메뉴 토글
+const menuStaterEl = document.querySelector('header .menu-starter')
+menuStaterEl.addEventListener('click', (e) => {
+  if (headerEl.classList.contains('menuing')) {
+    headerEl.classList.remove('menuing')
+    searchInputEl.value = ''
+    playScroll()
+  } else {
+    headerEl.classList.add('menuing')
+    stopScroll()
+  }
+})
+
+// 헤더 검색
+const searchTextFieldEl = document.querySelector('header .textfield')
+const searchCanceleEl = document.querySelector('header .search-canceler')
+
+searchTextFieldEl.addEventListener('click', (e) => {
+  headerEl.classList.add('searching--mobile')
+  searchInputEl.focus()
+})
+
+searchCanceleEl.addEventListener('click', (e) => {
+  headerEl.classList.remove('searching--mobile')
+})
+
+// 화면 너비가 변할 때마다 확인
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 740) {
+    headerEl.classList.remove('searching')
+  } else {
+    headerEl.classList.remove('searching--mobile')
+  }
+})
 
 // 요소 가시성 관찰
 const io = new IntersectionObserver((entries) => {

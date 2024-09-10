@@ -118,3 +118,37 @@ ol 태그에서 각 li 태그에 10진수 숫자 표시 : list-style: decimal;
 윗첨자 요소 : <sup>
 
 <hr>
+
+반응형 레이아웃을 위한 CSS @media 
+@media - 규칙
+타입 and (기능) - 미디어 쿼리
+```css
+@media 타입 and (기능) {
+  스타일
+}
+```
+타입 : screen, tv, all ...
+all : 모든 타입 (기본값)
+all and는 생략이 가능하여 @media (기능) { 스타일 } 로 작성이 가능함  
+
+기능
+- orientation: portrait -> 가로 너비 x보다 세로 높이 y가 더 큰 경우
+- orientation: landscape -> 가로 너비 x가 세로 높이 y보다 더 큰 경우
+
+하나의 CSS파일이 아닌 기능별로 파일을 관리할 수도 있음.
+```html
+...
+<link rel="stylesheet" href="./main.css" />
+<!-- 중단점 max-width:1200px일 때 적용할 스타일을 작성한 파일과 연결-->
+<link rel="stylesheet" href="./main.medium.css" media="타입 and (max-width:1200px)" />
+<!-- 중단점 max-width:800px일 때 적용할 스타일을 작성한 파일과 연결-->
+<link rel="stylesheet" href="./main.small.css" media="타입 and (max-width:800px)" />
+```
+
+<hr>
+
+// html 요소
+document.documentElement
+
+<hr>
+
