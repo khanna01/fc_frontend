@@ -123,6 +123,34 @@ window.addEventListener('resize', () => {
   }
 })
 
+// 내비게이션 모바일 모드
+const navEl = document.querySelector('nav')
+const navMenuToggleEl = navEl.querySelector('.menu-toggler')
+const navMenuShadowEl = navEl.querySelector('.shadow')
+navMenuToggleEl.addEventListener('click', (e) => {
+  if (navEl.classList.contains('menuing')) {
+    hideNavMenu()
+  } else {
+    showNavMenu()
+  }
+})
+
+navEl.addEventListener('click', (e) => {
+  e.stopPropagation()
+})
+
+navMenuShadowEl.addEventListener('click', hideNavMenu)
+
+window.addEventListener('click', hideNavMenu)
+
+function showNavMenu() {
+  navEl.classList.add('menuing')
+}
+
+function hideNavMenu() {
+  navEl.classList.remove('menuing')
+}
+
 // 요소 가시성 관찰
 const io = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
