@@ -152,3 +152,8 @@ document.documentElement
 
 <hr>
 
+요소의 기본 position값은 static임.
+다른 position속성으로 정의했다가 다시 초기화할 때 static으로 정의해야 함.
+
+<hr>
+
