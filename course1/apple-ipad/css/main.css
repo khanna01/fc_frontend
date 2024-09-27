@@ -350,6 +350,26 @@ a.link::after {
   margin-top: 26px;
 }
 
+@media (max-width: 1000px) {
+  .whitebox {
+    padding: 60px 30px;
+  }
+
+  .whitebox .icon {
+    width: 44px;
+  }
+
+  .whitebox h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 740px) {
+  .whitebox p {
+    font-size: 17px;
+  }
+}
+
 /* HEADER */
 header {
   --header-height: 44px;
@@ -2548,6 +2568,29 @@ main {
   margin-right: 90px;
 }
 
+@media (max-width: 1000px) {
+  .ar .image {
+    width: 258px;
+  }
+}
+
+@media (max-width: 740px) {
+  .ar .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ar .container > div {
+    max-width: none;
+    margin: 0 0 30px;
+    text-align: center;
+  }
+
+  .ar .icon {
+    margin: 0 auto 20px;
+  }
+}
+
 /* ENVIRONMENT */
 .environment {
   background-color: var(--color-section);
@@ -2562,6 +2605,12 @@ main {
 
 .environment h1 {
   color: #03a10e;
+}
+
+@media (max-width: 1000px) {
+  .environment p br {
+    display: none;
+  }
 }
 
 /* ACCESSORY SHOP */
@@ -2584,11 +2633,23 @@ main {
   margin-top: 50px;
 }
 
+@media (max-width: 1000px) {
+  .accessory-shop img {
+    width: 960px;
+  }
+}
+
 /* TRADE */
 .trade {
   background-color: var(--color-section);
   padding: 20px 20px 0;
   text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .trade p br {
+    display: none;
+  }
 }
 
 /* COMPARE */
@@ -2655,6 +2716,38 @@ main {
 
 .compare .item a.link {
   font-size: 14px;
+}
+
+@media (max-width: 1000px) {
+  .compare .items {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 68px auto 34px;
+  }
+}
+
+@media (max-width: 740px) {
+  .compare .whitebox {
+    max-width: 430px;
+  }
+
+  .compare .items {
+    max-width: 190px;
+  }
+
+  .compare .item {
+    border-bottom: none;
+  }
+
+  .compare .links {
+    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .compare a.link {
+    margin-top: 0;
+  }
 }
 
 /* FOOTER */
