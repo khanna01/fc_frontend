@@ -226,6 +226,7 @@ navigations.forEach((nav) => {
   mapEl.innerHTML = `
   <h3>
     <span class="text">${nav.title}</span>
+    <span class="icon">+</span>
   </h3>
   <ul>
     ${mapList}
@@ -233,6 +234,18 @@ navigations.forEach((nav) => {
   `
 
   navigationsEl.append(mapEl)
+})
+
+const mapEls = navigationsEl.querySelectorAll('.map')
+mapEls.forEach((mapEl) => {
+  const mapH3Els = mapEl.querySelector('h3')
+  mapH3Els.addEventListener('click', (e) => {
+    if (mapEl.classList.contains('show')) {
+      mapEl.classList.remove('show')
+    } else {
+      mapEl.classList.add('show')
+    }
+  })
 })
 
 // 현재 연도
