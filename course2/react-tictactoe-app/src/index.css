@@ -1,0 +1,11 @@
+body {
+  font:
+    14px 'Century Gothic',
+    Futura Gothic,
+    sans-serif;
+}
+
+ol,
+ul {
+  padding-left: 30px;
+}
