@@ -3,12 +3,14 @@ import Nav from './components/Nav.jsx'
 import styled from 'styled-components'
 import bg from '@/assets/images/home-background.png'
 import Banner from '@/components/Banner.jsx'
+import Category from '@/components/Category.jsx'
 
 function App() {
   return (
     <Container>
       <Nav />
       <Banner />
+      <Category />
     </Container>
   )
 }
