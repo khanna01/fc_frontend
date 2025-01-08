@@ -16,7 +16,7 @@ export default function Banner() {
   const fetchData = async () => {
     // 현재 상영중인 영화 목록 정보 가쟈오기
     const response = await axiosInstance.get(request.fetchNowPlaying)
-    console.log(response)
+    // console.log(response)
     // 랜덤한 영화 id 가져오기
     const moveId =
       response.data.results[
@@ -27,7 +27,7 @@ export default function Banner() {
     const { data: movieDetail } = await axiosInstance.get(`movie/${moveId}`, {
       params: { append_to_response: 'videos', language: 'ko' },
     })
-    console.log(movieDetail)
+    // console.log(movieDetail)
     setMovie(movieDetail)
   }
 
