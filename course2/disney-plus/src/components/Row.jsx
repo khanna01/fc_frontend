@@ -1,9 +1,12 @@
 import { useCallback, useEffect, useState } from 'react'
 import axiosInstance from '@/api/axios.js'
 import '@/assets/css/Row.css'
+import MovieModal from '@/components/Movie-Modal/Movie-Modal.jsx'
 
 export default function Row({ title, id, fetchUrl }) {
   const [movies, setMovies] = useState([])
+  const [modalOpen, setModalOpen] = useState(false)
+  const [movieSelected, setMovieSelected] = useState({})
 
   const fetchMovies = useCallback(async () => {
     const response = await axiosInstance.get(fetchUrl)
@@ -14,6 +17,11 @@ export default function Row({ title, id, fetchUrl }) {
   useEffect(() => {
     fetchMovies()
   }, [fetchMovies])
+
+  const handleClick = (movie) => {
+    setModalOpen(true)
+    setMovieSelected(movie)
+  }
 
   return (
     <div>
@@ -51,6 +59,9 @@ export default function Row({ title, id, fetchUrl }) {
           </span>
         </div>
       </div>
+      {modalOpen && (
+        <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
+      )}
     </div>
   )
 }
