@@ -1,42 +1,38 @@
 import './App.css'
-import Nav from './components/Nav.jsx'
 import styled from 'styled-components'
+import request from '@/api/request.js'
+import Nav from './components/Nav.jsx'
 import bg from '@/assets/images/home-background.png'
 import Banner from '@/components/Banner.jsx'
 import Category from '@/components/Category.jsx'
 import Row from '@/components/Row.jsx'
-import request from '@/api/request.js'
+import { Outlet, Route, Routes } from 'react-router-dom'
+import LoginPage from '@/pages/LoginPage/index.jsx'
+import DetailPage from '@/pages/DetailPage/index.jsx'
+import SearchPage from '@/pages/SearchPage/index.jsx'
+import MainPage from '@/pages/MainPage/index.jsx'
+
+const Layout = () => {
+  return (
+    <div>
+      <Nav />
+      <Outlet />
+    </div>
+  )
+}
 
 function App() {
   return (
-    <Container>
-      <Nav />
-      <Banner />
-      <Category />
-      <Row title="Trending Now" id="TN" fetchUrl={request.fetchTrending} />
-      <Row title="Top Rated" id="TR" fetchUrl={request.fetchTopRated} />
-      <Row title="Action Movies" id="AM" fetchUrl={request.fetchActionMovies} />
-      <Row title="Comedy Movies" id="CM" fetchUrl={request.fetchComedyMovies} />
-    </Container>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Layout />} />
+        <Route index element={<LoginPage />} />
+        <Route path="main" element={<MainPage />} />
+        <Route path=":movieId" element={<DetailPage />} />
+        <Route path="search" element={<SearchPage />} />
+      </Routes>
+    </div>
   )
 }
 
 export default App
-
-const Container = styled.main`
-  position: relative;
-  min-height: calc(100vh - 250px);
-  overflow-x: hidden;
-  display: block;
-  top: 72px;
-  padding: 0 calc(3.5vw + 5px);
-
-  &:after {
-    background: url(${bg}) center center / cover no-repeat fixed;
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 1;
-    z-index: -1;
-  }
-`
