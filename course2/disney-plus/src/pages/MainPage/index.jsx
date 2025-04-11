@@ -3,6 +3,7 @@ import Nav from '@/components/Nav.jsx'
 import Banner from '@/components/Banner.jsx'
 import Category from '@/components/Category.jsx'
 import Row from '@/components/Row.jsx'
+import bg from '@/assets/images/home-background.png'
 import request from '@/api/request.js'
 
 export default function MainPage() {
