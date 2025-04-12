@@ -9,7 +9,7 @@ import request from '@/api/request.js'
 export default function MainPage() {
   return (
     <Container>
-      <Nav />
+      {/*<Nav />*/}
       <Banner />
       <Category />
       <Row title="Trending Now" id="TN" fetchUrl={request.fetchTrending} />

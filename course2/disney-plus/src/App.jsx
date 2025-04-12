@@ -1,3 +1,4 @@
+// prettier-ignore
 import './App.css'
 import styled from 'styled-components'
 import request from '@/api/request.js'
@@ -25,11 +26,12 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route index element={<LoginPage />} />
-        <Route path="main" element={<MainPage />} />
-        <Route path=":movieId" element={<DetailPage />} />
-        <Route path="search" element={<SearchPage />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<LoginPage />} />
+          <Route path="main" element={<MainPage />} />
+          <Route path=":movieId" element={<DetailPage />} />
+          <Route path="search" element={<SearchPage />} />
+        </Route>
       </Routes>
     </div>
   )
