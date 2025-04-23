@@ -2,6 +2,12 @@ import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import logo from '@/assets/images/logo.svg'
 import { useLocation, useNavigate } from 'react-router-dom'
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+} from 'firebase/auth'
 import LoginPage from '@/pages/LoginPage/index.jsx'
 
 export default function Nav() {
@@ -9,11 +15,45 @@ export default function Nav() {
   const { pathname } = useLocation()
   const [searchValue, setSearchValue] = useState('')
   const navigate = useNavigate()
+  const provider = new GoogleAuthProvider()
+  const auth = getAuth()
 
   const handleChange = (e) => {
     setSearchValue(e.target.value)
     navigate(`/search?q=${e.target.value}`)
   }
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setShow(true)
+    } else {
+      setShow(false)
+    }
+  }
+
+  const handleAuth = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {})
+      .catch((error) => {
+        alert(error.message)
+      })
+  }
+
+  // 로그인된 상태인지 아닌지 확인하고 해당 페이지로 이동
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      console.log(user)
+      if (user) {
+        if (pathname === '/') {
+          // 유저가 있고 로그인 페이지일때만 메인 페이지로 이동
+          navigate('/main')
+        }
+      } else {
+        // 유저가 없다면 로그인 페이지로 이동
+        navigate('/')
+      }
+    })
+  }, [auth])
 
   useEffect(() => {
     // 리스너 등록
@@ -25,14 +65,6 @@ export default function Nav() {
     }
   }, [])
 
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setShow(true)
-    } else {
-      setShow(false)
-    }
-  }
-
   return (
     <NavWrapper show={show.toString()}>
       <Logo>
@@ -43,7 +75,7 @@ export default function Nav() {
         />
       </Logo>
       {pathname === '/' ? (
-        <Login>Login</Login>
+        <Login onClick={handleAuth}>Login</Login>
       ) : (
         <>
           <Input
