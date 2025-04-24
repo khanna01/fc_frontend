@@ -18,6 +18,10 @@ export default function Nav() {
   const navigate = useNavigate()
   const provider = new GoogleAuthProvider()
   const auth = getAuth()
+  const initialUserData = localStorage.getItem('user')
+    ? JSON.parse(localStorage.getItem('user'))
+    : {}
+  const [userData, setUserData] = useState(initialUserData)
 
   const handleChange = (e) => {
     setSearchValue(e.target.value)
@@ -37,6 +41,7 @@ export default function Nav() {
       .then((result) => {
         // 유저 정보 저장
         setUserData(result.user)
+        localStorage.setItem('user', JSON.stringify(result.user))
       })
       .catch((error) => {
         alert(error.message)
